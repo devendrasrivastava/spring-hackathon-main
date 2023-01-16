@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const Timer1 = () => {
 
     const [seconds, setSeconds] = useState(0);
-    const [minutes, setMinutes] = useState(1);
+    const [minutes, setMinutes] = useState(2);
 
     var timer;
     useEffect(()=>{
@@ -44,7 +44,7 @@ const stop=()=>{
             <div className="container">
                 <div className="timer_container">
                     {/* <h1>Timer</h1> */}
-                    <h6>System will Logged out in: {minutes<10? "0" +minutes: minutes}:{seconds<10? "0" +seconds : seconds}</h6>
+                    <h6>System will Log off in: {minutes<10? "0" +minutes: minutes}:{seconds<10? "0" +seconds : seconds}</h6>
 
                     {/* <button className="restart" onClick={restart}>Restart</button>
                     <button className="stop" onClick={stop}>Stop</button> */}

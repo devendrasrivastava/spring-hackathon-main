@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import './BasicCard.css'
 
 const bull = (
   <Box
@@ -17,7 +18,7 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} className='ho'>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom style={{color:"#5E10B1", fontWeight:'bold'}}>
           Go Digital !!!

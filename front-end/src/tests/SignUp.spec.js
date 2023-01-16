@@ -5,13 +5,17 @@ import SignUp from '../Components/SignUp/SignUp';
 
 
 
-test('render of Sign up field should be correct',()=>{
+test('sign up title should be ther in the document',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
   const usersignupField = screen.getByText("Sign Up");
   expect(usersignupField).toBeInTheDocument();
 })
 
-
+test('render of Sign up field should be correct',()=>{
+  render(<SignUp/>,{wrapper: BrowserRouter});
+  const usersignupField = screen.getByLabelText("First Name *");
+  expect(usersignupField).toBeInTheDocument();
+})
 
 
 export default SignUp

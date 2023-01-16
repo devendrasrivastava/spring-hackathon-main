@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
+import './MediaCard.css';
 
 export default function MediaCard() {
   return (
@@ -13,7 +14,7 @@ export default function MediaCard() {
    <div className="container">
     <div className="row">
       <div className="col-12 col-sm-8 col-md-4 col-lg-4 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardMedia
         component="img"
         height="240"
@@ -32,7 +33,7 @@ export default function MediaCard() {
       </div>
 
       <div className="col-12 col-sm-8 col-md-4 col-lg-4 my-4">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardMedia
         component="img"
         height="240"
@@ -51,7 +52,7 @@ export default function MediaCard() {
       </div>
 
 <div className="col-12 col-sm-8 col-md-4 col-lg-4 my-4">
-<Card sx={{ maxWidth: 345 }}>
+<Card sx={{ maxWidth: 345 }} className='ho'>
       <CardMedia
         component="img"
         height="240"

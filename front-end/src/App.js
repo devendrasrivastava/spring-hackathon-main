@@ -12,6 +12,7 @@ import SignInSide from './Components/LoginPage/SignInSide';
 import Register from './Components/ForgetPassword/ForgetPassword';
 import Footer from './Components/Footer/BSFooter';
 import BSHeader from './Components/Header/BSHeader';
+import BSFooter from './Components/Footer/BSFooter';
 
 
 
@@ -34,7 +35,7 @@ function App() {
         </Routes>
         {/* <StickyFooter /> */}
         
-        <Footer/>
+        <BSFooter/>
         
         
         

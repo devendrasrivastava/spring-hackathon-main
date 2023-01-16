@@ -5,13 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function BSHeader() {
 
-    const useremail = localStorage.getItem('userName');
-    
-
+  const useremail = localStorage.getItem('userName');
   const navigate = useNavigate();
-  const jwt = 'jwt_token';
-  console.log(jwt);
 
+
+  //function to log out
 
   function logout() {
     localStorage.removeItem('jwt_token');
@@ -19,6 +17,7 @@ export default function BSHeader() {
   }
 
 
+  //header starts here
   return (
     <div>
         
@@ -38,7 +37,7 @@ export default function BSHeader() {
                         </li>
 
                         {
-              localStorage.getItem('jwt_token' === jwt) ?
+              localStorage.getItem('jwt_token') ?
                 <>
                         <li class="nav-item">
                             <Link class="nav-link active" to="/contactus">Contact us</Link>

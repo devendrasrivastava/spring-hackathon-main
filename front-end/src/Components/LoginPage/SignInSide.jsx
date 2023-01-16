@@ -204,9 +204,10 @@ export default function SignInSide() {
 
                 <Grid container>
                   <Grid item xs>
-                    <Link href="/forgetpassword" variant="body2">
+                    {/* <Link href="/forgetpassword" variant="body2">
                       Forgot password?
-                    </Link> <Stack spacing={2} sx={{ width: '100%' }}>
+                    </Link>  */}
+                    <Stack spacing={2} sx={{ width: '100%' }}>
                       <Button
                         sx={{ mt: 3, mb: 2, backgroundColor: "#40135C" }}
                         type="submit"

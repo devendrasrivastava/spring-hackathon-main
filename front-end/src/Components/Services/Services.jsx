@@ -38,7 +38,7 @@ export default function ActionAreaCard() {
     <div className="container user-aboutus">
         <div className="row">
             <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -59,7 +59,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -80,7 +80,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -101,7 +101,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -125,7 +125,7 @@ export default function ActionAreaCard() {
 
     <div className="row">
             <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -146,7 +146,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -167,7 +167,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -188,7 +188,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -211,7 +211,7 @@ export default function ActionAreaCard() {
 
     <div className="row">
             <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -232,7 +232,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -253,7 +253,7 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -274,12 +274,12 @@ export default function ActionAreaCard() {
     </div>
 
     <div className="col-12 col-md-6 col-lg-3 col-xl-3 my-4">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className='ho'>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image="./assets/qr.png"
+          image="./assets/qr.jpg"
           alt="green iguana"
         />
         <CardContent>
