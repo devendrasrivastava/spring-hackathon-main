@@ -109,7 +109,7 @@ export default function MultiActionAreaCard() {
         <CardMedia
           component="img"
           height="300"
-          image="./assets/new.jpg"
+          image="https://source.unsplash.com/900x600/?bank,card"
           alt="green iguana"
         />
         

@@ -3,7 +3,6 @@ import React from 'react'
 import './BSFooter.css';
 import Timer1 from '../../Timer';
 import { useNavigate } from "react-router-dom";
-import SignInSide from '../LoginPage/SignInSide';
 
 
 
@@ -20,7 +19,7 @@ export default function BSFooter() {
 
 
   if (localStorage.getItem('jwt_token')) {
-    setTimeout(logout, 60000);
+    setTimeout(logout, 122000);
   }
 
 
@@ -52,7 +51,7 @@ export default function BSFooter() {
                 <li><a href="http://scanfcode.com/category/c-language/">Privacy notice</a></li>
                 <li><a href="http://scanfcode.com/category/front-end-development/">Business Banking catalogue</a></li>
                 <li><a href="http://scanfcode.com/category/back-end-development/">Student Accounts</a></li>
-                <li><a href="http://scanfcode.com/category/java-programming-language/">Branche Locator</a></li>
+                <li><a href="http://scanfcode.com/category/java-programming-language/">Branch Locator</a></li>
                 <li><a href="http://scanfcode.com/category/android/">ATM Locator</a></li>
                 <li><a href="http://scanfcode.com/category/templates/">Work with us</a></li>
               </ul>
@@ -85,10 +84,10 @@ export default function BSFooter() {
 
             <div class="col-md-4 col-sm-6 col-xs-12">
               <ul class="social-icons">
-                <li><a class="facebook" href="/"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="twitter" href="/"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="dribbble" href="/"><i class="fa fa-dribbble"></i></a></li>
-                <li><a class="linkedin" href="/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a class="facebook" href="https://www.facebook.com/" target="_target"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="https://twitter.com/" target="_target"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="https://dribbble.com/" target="_target"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="https://www.linkedin.com/" target="_target"><i class="fa fa-linkedin"></i></a></li>
               </ul>
             </div>
           </div>

@@ -1,8 +1,8 @@
 {
-  "projectName": "paymentwalletnatwst",
+  "projectName": "springboot",
   "meta": {
     "type": "frontend"
   },
   "packageManager": "npm",
-  "hash": "b1cbd734"
+  "hash": "6bbd33c2"
 }

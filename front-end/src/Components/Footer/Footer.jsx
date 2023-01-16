@@ -1,92 +1,88 @@
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
+import { useNavigate } from "react-router-dom";
+import Timer1 from '../../Timer';
 
-function Copyright(props) {
+export default function Footer() {
+
+  const navigate = useNavigate();
+
+  function logout() {
+    navigate("/login")
+    localStorage.removeItem('jwt_token');
+
+  }
+
+
+
+  if (localStorage.getItem('jwt_token')) {
+    setTimeout(logout, 122000);
+  }
+
+
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        natwest.com
-      </Link>{' '}
-      Created by Devendra-
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+    <div className='footermargin'>
 
 
-const footers = [
-  {
-    title: 'NatWest',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Wallet Features',
-    description: [
-      'Daily Offers',
-      'Redeem Reward points',
-      'Refer your friends',
-      'Desktop App',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Branch Locator', 'ATM Locator', 'Change your pin', 'Wallet Deactivation'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+<footer class="hero">
+        <div class="container flex">
+            <div class="container__about">
+                <h2>About</h2>
+                <p>A young software developer, starting his professional life, learning the most used languages in this
+                    industry, PYTHON, C++, HTML, CSS and JAVASCRIPT.</p>
+                    {localStorage.getItem('jwt_token') ?
 
-function PricingContent() {
-  return (
-    <React.Fragment>
-      
-     
-      <div className="container my-4 user-footer-text">
-        <hr />
-        <Grid container spacing={4} justifyContent="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="text.primary" gutterBottom >
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="text.secondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-            
-          ))}
-        </Grid>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/" target={'_blank'}><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="https://twitter.com/" target={'_blank'}><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="https://dribbble.com/" target={'_blank'}><i class="fa fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="https://www.linkedin.com/" target={'_blank'}><i class="fa fa-linkedin"></i></a></li>   
-            </ul>
-          </div>
-        <Copyright sx={{ mt: 5 }} />
+                <p><Timer1 /></p>
+                : null
+              }
+            </div>
+            <div class="container-pages flex">
+
+                <div class="container__recentpages">
+                    <h2>Recient Pages</h2>
+                    <ul>
+                        <li><a href="https://brayancountries.netlify.app">Countries</a></li>
+                        <li><a href="https://portfolio-brayan.netlify.app/">Portfolio</a></li>
+                        <li><a href="https://cartagena-cooks.netlify.app/">Cartagena-cooks</a></li>
+                        <li><a href="https://work-company.netlify.app/">Work-company</a></li>
+                    </ul>
+                </div>
+                <div class="container__more">
+                    <h2>Recient Pages</h2>
+                    <ul>
+                        <li><a href="https://challenge2-bom.netlify.app/">Challenge2</a></li>
+                        <li><a href="https://challenge3-brayanom.netlify.app/">Challenge3</a></li>
+                        <li><a href="https://dev4-brayanom.netlify.app/">Challenge4</a></li>
+                        <li><a href="https://cv-brayanom.netlify.app/">Curriculum</a></li>
+                        <li><a href="https://mentor1-brayanom.netlify.app/">Mentor1</a></li>
+                    </ul>
+
+                </div>
+            </div>
         </div>
-      {/* </Container> */}
-      
-      {/* End footer */}
-    </React.Fragment>
-  );
-}
+        <div class="line__separete"></div>
+        <div class="by flex">
+            <p>Copyright © 2022 All Rights Reserved by Brayan Ospina.</p>
+            <div class="icons">
+                <a href="https://t.co/VBNNTjtw3F" class="icon1 icon--instagram">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="#" class="icon1 icon--twitter">
+                    <i class="ri-twitter-line"></i>
+                </a>
+                <a href="linkedin.com/in/brayan-ospina-8bb472243" class="icon1 icon--linkedin">
+                    <i class="ri-linkedin-line"></i>
+                </a>
+                <a href="https://github.com/brayanospina2005/final-project" class="icon1 icon--github">
+                    <i class="ri-github-line"></i>
+                </a>
+            </div>
+        </div>
 
-export default function MuiFooter() {
-  return <PricingContent />;
+    </footer>
+
+
+    </div>
+  )
 }

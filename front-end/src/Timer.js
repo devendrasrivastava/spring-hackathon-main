@@ -44,7 +44,7 @@ const stop=()=>{
             <div className="container">
                 <div className="timer_container">
                     {/* <h1>Timer</h1> */}
-                    <h6>System will Log off in: {minutes<10? "0" +minutes: minutes}:{seconds<10? "0" +seconds : seconds}</h6>
+                    <h6>Your session will end in: {minutes<10? "0" +minutes: minutes}:{seconds<10? "0" +seconds : seconds}</h6>
 
                     {/* <button className="restart" onClick={restart}>Restart</button>
                     <button className="stop" onClick={stop}>Stop</button> */}
