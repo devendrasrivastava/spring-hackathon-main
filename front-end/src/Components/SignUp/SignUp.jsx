@@ -30,6 +30,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 
+
 const theme = createTheme();
 
 
@@ -147,9 +148,12 @@ export default function SignUp() {
         .required("Phone cannot be left blank")
         .matches(/^[0][6-9][0-9]{9}$/, "Please add 0 before your 10 digit mobile number."),
 
-      age: yup.string()
-        .required("Age cannot be left blank")
-        .matches(/^[0-9]{1,2}$/, "Please enter valid Age"),
+        age: yup.date()
+        // .required("Age cannot be left blank")
+        // .matches(/^[0-9]{1,2}$/, "Please enter valid Age"),
+        .max(new Date(Date.now() - 567648000000), "You must be at least 18 years") //567648000000 = number of seconds in 18 years
+        .min(new Date(Date.now() - 1892160000000), "You must be under 60 years")
+        .required("Date of Birth Required"),
 
       // age: yup.string()
       // .required("DoB cannot be left blank")
@@ -249,19 +253,21 @@ export default function SignUp() {
                       {formik.errors.city && formik.touched.city ? <span className='text-danger'>{formik.errors.city}</span> : null}
                     </Grid>
 
-                    <Grid item xs={12}>
-                      <TextField
-                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.age}
-                        required
-                        fullWidth
-                        id="age"
-                        label="age"
-                        type="number"
-                        name="age"
-
-                      />
-                      {formik.errors.age && formik.touched.age ? <span className='text-danger'>{formik.errors.age}</span> : null}
-                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        <OutlinedInput
+                          onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.age}
+                          required
+                          fullWidth
+                          id="age"
+                          label=""
+                          type="date"
+                          name="age"
+                          endAdornment={
+                            <InputAdornment position="end">DOB</InputAdornment>
+                          }
+                        />
+                        {formik.errors.age && formik.touched.age ? <span className='text-danger'>{formik.errors.age}</span> : null}
+                      </Grid>
 
                     <Grid item xs={12}>
                       <TextField
