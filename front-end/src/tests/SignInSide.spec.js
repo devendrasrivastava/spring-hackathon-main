@@ -11,11 +11,18 @@ test('render of email field should be correct',()=>{
   expect(usernameField).toBeInTheDocument();
 })
 
+test('render of email field label should be correct',()=>{
+  render(<SignInSide/>,{wrapper: BrowserRouter});
+  const usernameField = screen.getByLabelText("Email Address *");
+  expect(usernameField).toBeInTheDocument();
+})
+
 test('render of password field should be correct',()=>{
   render(<SignInSide/>,{wrapper: BrowserRouter});
   const userpassField = screen.getByText("Password");
   expect(userpassField).toBeInTheDocument();
 })
+
 
 
 

@@ -29,10 +29,12 @@ test('render of City field should be correct',()=>{
   expect(usersignupField).toBeInTheDocument();
 })
 
-test('render of Age field should be correct',()=>{
+test('render of Email field should be correct',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
-  const usersignupField = screen.getByLabelText("Age *");
+  const usersignupField = screen.getByLabelText("Email Address *");
   expect(usersignupField).toBeInTheDocument();
 })
+
+
 
 export default SignUp
