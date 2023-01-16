@@ -75,29 +75,35 @@ export default function SignInSide() {
     },
     onSubmit: values => {
       console.log("submit");
-      fetch("http://localhost:9000/auth/login", {
+      fetch("http://localhost:8765/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(values)
       })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          console.log(data.access_token);
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        console.log(data.jwt_token);
+        console.log(data.email);
+        console.log(data.status)
+                  
 
-          if (data.status === 200) {
-            localStorage.setItem("jwt_token", data.access_token)  //use session storage to remove token on closure of browser
-            localStorage.setItem("userName", JSON.stringify(data.userData)) //to get data of user in the state, we can now print user details when they log in
-            navigate("/")
+        if (data.status === 200) {
+        localStorage.setItem("jwt_token", data.jwt_token)  //use session storage to remove token on closure of browser
+        localStorage.setItem("userName", data.email) //to get data of user in the state, we can now print user details when they log in
+        
+        navigate("/")
 
-          }
-          else {
-            setOpen(true);
-          }
-        })
-    },
+        }
+      })
+      .catch((error)=>{
+        setOpen(true);
+    });
+  },
+
+  
     validationSchema: yup.object().shape({
       email: yup.string()
         .email("Invalid email address")

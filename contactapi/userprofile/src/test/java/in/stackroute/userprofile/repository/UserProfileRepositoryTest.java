@@ -21,7 +21,7 @@ class UserProfileRepositoryTest {
 
     @BeforeEach
     public void setup(){
-        User user1 = new User(10, "Charlie", "charlie@gmail.com", "1234");
+        User user1 = new User(1, "charlie","testlastname", "charlie@gmail.com", "testcity","98889898987",24,"testpass");
         repository.save(user1);
     }
 
@@ -32,7 +32,7 @@ class UserProfileRepositoryTest {
 
     @Test
     public void givenUserDoesNotExixtsinDBThenShouldReturnFalse(){
-        assertFalse(repository.existsByEmail("john@gmail.com"),"User available");
+        assertFalse(repository.existsByEmail("john@gmail.com"),"User available so the test is failed");
     }
 
     @Test
@@ -41,7 +41,7 @@ class UserProfileRepositoryTest {
 
         assertTrue(optionalUser.isPresent());
         User user = optionalUser.get();
-        assertEquals("Charlie",user.getName());
+        assertEquals("Charlie",user.getFirstname());
 
     }
 

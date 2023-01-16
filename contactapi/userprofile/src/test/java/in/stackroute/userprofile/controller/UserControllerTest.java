@@ -2,8 +2,10 @@ package in.stackroute.userprofile.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import in.stackroute.userprofile.exceptions.CredentialsMismatchException;
 import in.stackroute.userprofile.exceptions.UserExistsException;
 import in.stackroute.userprofile.model.User;
+import in.stackroute.userprofile.model.UserCredentials;
 import in.stackroute.userprofile.service.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = UserController.class)
 class UserControllerTest {
     public static final String USERS_REGISTER = "/api/v1/users/register";
+    public static final String USERS_LOGIN = "/api/v1/users/login";
     User userONe;
 
     @MockBean
@@ -42,7 +45,7 @@ class UserControllerTest {
 
     @BeforeEach
     void setUp() {
-         userONe = new User(1, "testname", "test@gmail.com", "testpass");
+         userONe = new User(1, "testfirstname","testlastname", "test@gmail.com", "testcity","98889898987",24,"testpass");
     }
 
 
@@ -80,7 +83,6 @@ class UserControllerTest {
 
         verify(service).registerUser(any(User.class));
     }
-
 
 }
 

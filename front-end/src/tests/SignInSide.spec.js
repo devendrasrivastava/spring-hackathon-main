@@ -1,41 +1,22 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import SignInSide from '../Components/LoginPage/SignInSide';
 import { BrowserRouter } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-
-const theme = createMuiTheme();
-
-
-test('renders login form', () => {
-    const { getByLabelText } = render(
-      <ThemeProvider theme={theme}>
-        <SignInSide />
-      </ThemeProvider>
-    );
-    const usernameInput = getByLabelText('Email Address');
-    const passwordInput = getByLabelText('Password');
-    
-    
-    expect(usernameInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
-    
-  });
 
 
 
+test('render of email field should be correct',()=>{
+  render(<SignInSide/>,{wrapper: BrowserRouter});
+  const usernameField = screen.getByText("Email Address");
+  expect(usernameField).toBeInTheDocument();
+})
 
-// test('renders login form', () => {
-  
-//   render(<SignInSide />, {wrapper: BrowserRouter});
-//   const usernameInput = screen.getByLabelText('Email Address');
-//   const passwordInput = screen.getByLabelText('Password');
+test('render of password field should be correct',()=>{
+  render(<SignInSide/>,{wrapper: BrowserRouter});
+  const userpassField = screen.getByText("Password");
+  expect(userpassField).toBeInTheDocument();
+})
 
-  
-//   expect(usernameInput).toBeInTheDocument();
-//   expect(passwordInput).toBeInTheDocument();
 
-// });
 
 export default SignInSide

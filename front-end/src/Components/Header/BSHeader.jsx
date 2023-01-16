@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom";
 
 export default function BSHeader() {
 
-    const username = JSON.parse(localStorage.getItem('userName'));
+    const useremail = localStorage.getItem('userName');
     
-  // console.log(username)
 
   const navigate = useNavigate();
+  const jwt = 'jwt_token';
+  console.log(jwt);
+
 
   function logout() {
-    // localStorage.removeItem('jwt_token');
-    // localStorage.clear();    // it will clear all tokens
     localStorage.removeItem('jwt_token');
-    navigate("/registraion")
+    navigate("/login")
   }
 
 
@@ -38,7 +38,7 @@ export default function BSHeader() {
                         </li>
 
                         {
-              localStorage.getItem('jwt_token') ?
+              localStorage.getItem('jwt_token' === jwt) ?
                 <>
                         <li class="nav-item">
                             <Link class="nav-link active" to="/contactus">Contact us</Link>
@@ -68,7 +68,7 @@ export default function BSHeader() {
             {localStorage.getItem('jwt_token') ?
         <div class="dropdown">
           <button class="btn dropdown-toggle" id="user-details-on-header" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Welcome:{username.firstname} {username.lastname}
+          {useremail}
           </button>
           
           <ul class="dropdown-menu">

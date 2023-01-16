@@ -19,7 +19,6 @@
 	</properties>
 	<modules>
 		<module>apigateway</module>
-		<module>contactservice</module>
 		<module>discoveryservice</module>
 		<module>userprofile</module>
 	</modules>
