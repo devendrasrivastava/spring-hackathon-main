@@ -31,7 +31,7 @@ class UserServiceImplTest {
 
     @BeforeEach
     void setUp() {
-         userOne = new User(1, "Anu","testlastname", "anu@gmail.com", "testcity","98889898987",24,"testpass");
+         userOne = new User(1, "Anu","testlastname", "anu@gmail.com", "testcity","98889898987","24","testpass");
          credentialsOne = new UserCredentials("anu@gmail.com", "1234");
     }
 

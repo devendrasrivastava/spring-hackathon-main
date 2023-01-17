@@ -19,29 +19,36 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService{
 
-//    private Logger logger=LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Autowired
     private UserProfileRepository repository;
-
-    PasswordEncoder passwordEncoder;
 
 
     @Autowired
     private JWTGeneratorService jwtGeneratorService;
 
 
-@Override
-public User registerUser(User newUser) throws UserExistsException {
-    BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-    String encryptedpwd = bcrypt.encode(newUser.getPassword());
-    newUser.setPassword(encryptedpwd);
+    // here user with same email cannot register again
+    // if user enters a duplicate email, this method with throw UserExistsException
+    // if all ok, then user details will be registered in the MySQL database
+    @Override
+    public User registerUser(User newUser) throws UserExistsException {
+        BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+        String encryptedpwd = bcrypt.encode(newUser.getPassword());
+
+        //this will encrypt the password in the hash code
+        newUser.setPassword(encryptedpwd);
+
+
+        //if user email already exist then this condition will execute
     if(repository.existsByEmail(newUser.getEmail())){
-//            logger.error("User already exists with the given email");
         throw new UserExistsException("User with the email already Exists");
     }
-    User user = repository.save(newUser);
-//        logger.info("User successfully registered");
-    return user;
+
+    // if all ok, then this will save the user details in the MySql server
+        User user = repository.save(newUser);
+
+        return user;
 }
 
     
@@ -49,10 +56,10 @@ public User registerUser(User newUser) throws UserExistsException {
     @Override
     public String authenticateUser(UserCredentials credentials) throws CredentialsMismatchException {
         BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-//        logger.debug("Accessing database for getting user credentials");
+
         Optional<User> userByEmail = repository.getUserByEmail(credentials.getEmail());
         if(userByEmail.isEmpty()){
-//            logger.error("User not found with the given email");
+
             throw new CredentialsMismatchException("InValid credentials");
         }
         User user = userByEmail.get();
@@ -62,7 +69,6 @@ public User registerUser(User newUser) throws UserExistsException {
             String token = jwtGeneratorService.generateToken(credentials.getEmail());
             return token;
         }else{
-//            logger.error("Password mismatch for the user with the given email");
             throw new CredentialsMismatchException("InValid credentials");
         }
     }

@@ -45,7 +45,7 @@ class UserControllerTest {
 
     @BeforeEach
     void setUp() {
-         userONe = new User(1, "testfirstname","testlastname", "test@gmail.com", "testcity","98889898987",24,"testpass");
+         userONe = new User(1, "testfirstname","testlastname", "test@gmail.com", "testcity","98889898987","24","testpass");
     }
 
 

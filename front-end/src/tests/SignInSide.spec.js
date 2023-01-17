@@ -13,8 +13,8 @@ test('render of email field should be correct',()=>{
 
 test('render of email field label should be correct',()=>{
   render(<SignInSide/>,{wrapper: BrowserRouter});
-  const usernameField = screen.getByLabelText("Email Address *");
-  expect(usernameField).toBeInTheDocument();
+  const useremailField = screen.getByLabelText("Email Address *");
+  expect(useremailField).toBeInTheDocument();
 })
 
 test('render of password field should be correct',()=>{

@@ -21,7 +21,8 @@ class UserProfileRepositoryTest {
 
     @BeforeEach
     public void setup(){
-        User user1 = new User(1, "charlie","testlastname", "charlie@gmail.com", "testcity","98889898987",24,"testpass");
+        User user1 = new User(1, "charlie","testlastname", "charlie@gmail.com", "testcity","98889898987","24","testpass");
+
         repository.save(user1);
     }
 
@@ -42,10 +43,7 @@ class UserProfileRepositoryTest {
         assertTrue(optionalUser.isPresent());
         User user = optionalUser.get();
         assertEquals("Charlie",user.getFirstname());
-
     }
-
-    //Configure H2 Database
-    //write the test case for empty optional
-
 }
+
+

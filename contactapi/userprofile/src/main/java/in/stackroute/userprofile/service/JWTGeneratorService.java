@@ -13,6 +13,8 @@ public class JWTGeneratorService {
     @Value("${jwt.secret.key}")
     private String secretKey;
 
+
+    //this will expire the jwt token after 120 minutes. formula used here: Minutes X Seconds X Milliseconds
     public static final long VALIDITY_PERIOD=120*60*1000;
 
     public String generateToken(String email){

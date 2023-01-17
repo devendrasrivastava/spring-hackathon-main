@@ -13,26 +13,26 @@ test('render of Sign Up field should be correct',()=>{
 
 test('render of First name field should be correct',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
-  const usersignupField = screen.getByLabelText("First Name *");
-  expect(usersignupField).toBeInTheDocument();
+  const userfnameField = screen.getByLabelText("First Name *");
+  expect(userfnameField).toBeInTheDocument();
 })
 
 test('render of Last Name field should be correct',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
-  const usersignupField = screen.getByLabelText("Last Name *");
-  expect(usersignupField).toBeInTheDocument();
+  const userlnameField = screen.getByLabelText("Last Name *");
+  expect(userlnameField).toBeInTheDocument();
 })
 
 test('render of City field should be correct',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
-  const usersignupField = screen.getByLabelText("City *");
-  expect(usersignupField).toBeInTheDocument();
+  const usercityField = screen.getByLabelText("City *");
+  expect(usercityField).toBeInTheDocument();
 })
 
 test('render of Email field should be correct',()=>{
   render(<SignUp/>,{wrapper: BrowserRouter});
-  const usersignupField = screen.getByLabelText("Email Address *");
-  expect(usersignupField).toBeInTheDocument();
+  const useremailField = screen.getByLabelText("Email Address *");
+  expect(useremailField).toBeInTheDocument();
 })
 
 

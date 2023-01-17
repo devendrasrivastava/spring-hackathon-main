@@ -24,12 +24,19 @@ public class UserController {
     private UserService service;
 
 
+    // for user registration. here registerUser method will be called. user with same email cannot register again
+    // if user enters a duplicate email, this method with throw UserExistsException
+    // if all ok, then user details will be registered in the MySQL database
     @PostMapping("register")
     public ResponseEntity<User> registerUser(@RequestBody User newUser) throws UserExistsException {
         User addedUser = service.registerUser(newUser);
         return new ResponseEntity<>(addedUser, HttpStatus.CREATED);
     }
 
+
+    // for user login loginUser method will be called.
+    // if the user enters incorrect credentials then this method will throw CredentialsMismatchException
+    // if the credentials are correct, then the user will be able to log in.
     @PostMapping("login")
     public ResponseEntity<?> loginUser(@RequestBody UserCredentials credentials, HttpSession session) throws CredentialsMismatchException {
         String token = service.authenticateUser(credentials);
@@ -39,6 +46,5 @@ public class UserController {
         return new ResponseEntity<>(data,HttpStatus.OK);
 
     }
-
 
 }
